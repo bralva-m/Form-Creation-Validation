@@ -47,7 +47,6 @@ if (isValid ===true) {
 
 }
 
-console.log("username", username);
 
 });
 
