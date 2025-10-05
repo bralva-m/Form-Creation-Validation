@@ -6,12 +6,14 @@ const dataContainer= document.getElementById('api-data');
         const users= await response.json();
 
         dataContainer.innerHTML = '';
-
-        users.forEach(user => {
-            const li =document.createElement('li');
-            li.textContent = user.name;
-            dataContainer.appendchild(li);
-        });
+     const userList =document.createElement('ul');    
+        
+     users.forEach(user => {
+       const username =document.createElement('li');
+       username.textContent = user.name;
+        userList.appendChild(username);
+})
+        dataContainer.append(userList);
 
 }catch(error) {
     dataContainer.innerHTML = '';
@@ -19,4 +21,6 @@ const dataContainer= document.getElementById('api-data');
 }
 
 }
-document
+document.addEventListener('DOMContentLoaded', () =>{
+    fetchUserData();
+})
